@@ -1,0 +1,338 @@
+.base-node {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.base-node:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+.node-header {
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.node-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  text-align: center;
+}
+
+.node-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.node-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.node-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #374151;
+  margin: 0;
+}
+
+.node-input,
+.node-select,
+.node-textarea {
+  padding: 6px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #1f2937;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.node-input:focus,
+.node-select:focus,
+.node-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.node-textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.node-select {
+  cursor: pointer;
+  appearance: none;
+  padding-right: 24px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 6px center;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+}
+
+.node-custom-content {
+  margin-bottom: 8px;
+}
+
+/* Handle Styles */
+.react-flow__handle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #64748b;
+  border: 2px solid #ffffff;
+  transition: all 0.2s ease;
+}
+
+.react-flow__handle:hover {
+  background-color: #3b82f6;
+  transform: scale(1.2);
+}
+
+/* Text Node Specific Styles */
+.text-node {
+  transition: width 0.2s ease, height 0.2s ease;
+  min-width: 250px;
+  min-height: 120px;
+  max-width: 400px;
+  max-height: 300px;
+}
+
+/* Text Node Textarea */
+.text-node-textarea {
+  width: 100%;
+  resize: none;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 12px;
+  font-family: monospace;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.text-node-textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+/* Text Node Variable Labels */
+.text-node-variable {
+  position: absolute;
+  left: 20px;
+  font-size: 10px;
+  color: #10b981;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+/* Generate variable positions dynamically */
+.text-node-variable-0 { top: 15px; }
+.text-node-variable-1 { top: 40px; }
+.text-node-variable-2 { top: 65px; }
+.text-node-variable-3 { top: 90px; }
+.text-node-variable-4 { top: 115px; }
+.text-node-variable-5 { top: 140px; }
+/* Add more if needed */
+
+/* Node Type Specific Styles */
+.input-node,
+.output-node,
+.transform-node,
+.filter-node,
+.aggregate-node,
+.conditional-node,
+.delay-node,
+.llm-node {
+  min-width: 200px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+/* Individual Node Styles */
+.input-node {
+  border-left: 4px solid #22c55e;
+}
+
+.output-node {
+  border-left: 4px solid #ef4444;
+}
+
+.transform-node {
+  border-left: 4px solid #3b82f6;
+}
+
+.filter-node {
+  border-left: 4px solid #f59e0b;
+}
+
+.aggregate-node {
+  border-left: 4px solid #8b5cf6;
+}
+
+.conditional-node {
+  border-left: 4px solid #ec4899;
+}
+
+.delay-node {
+  border-left: 4px solid #64748b;
+}
+
+.llm-node {
+  border-left: 4px solid #0ea5e9;
+}
+
+/* Hover Effects */
+.input-node:hover,
+.output-node:hover,
+.transform-node:hover,
+.filter-node:hover,
+.aggregate-node:hover,
+.conditional-node:hover,
+.delay-node:hover,
+.llm-node:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.react-flow__handle-left {
+  left: -4px;
+}
+
+.react-flow__handle-right {
+  right: -4px;
+}
+
+/* Node Type Specific Colors */
+.input-node {
+  background-color: #dbeafe !important;
+}
+
+.output-node {
+  background-color: #dcfce7 !important;
+}
+
+.llm-node {
+  background-color: #f3e8ff !important;
+}
+
+.text-node {
+  background-color: #fff7ed !important;
+}
+
+.filter-node {
+  background-color: #fef3c7 !important;
+}
+
+.transform-node {
+  background-color: #f1f5f9 !important;
+}
+
+.delay-node {
+  background-color: #fae8ff !important;
+}
+
+.aggregate-node {
+  background-color: #ede9fe !important;
+}
+
+.conditional-node {
+  background-color: #ffedd5 !important;
+}
+
+/* Animations */
+@keyframes nodeAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.base-node {
+  animation: nodeAppear 0.3s ease-out;
+  background: white;
+  transition: border-color 0.2s ease;
+}
+
+.node-input:focus,
+.node-select:focus,
+.node-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.node-textarea {
+  resize: vertical;
+  min-height: 60px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+/* Specific node type styles */
+.input-node {
+  border-left: 4px solid #10b981 !important;
+}
+
+.output-node {
+  border-left: 4px solid #ef4444 !important;
+}
+
+.llm-node {
+  border-left: 4px solid #8b5cf6 !important;
+}
+
+.text-node {
+  border-left: 4px solid #3b82f6 !important;
+}
+
+.filter-node {
+  border-left: 4px solid #f59e0b !important;
+}
+
+.transform-node {
+  border-left: 4px solid #06b6d4 !important;
+}
+
+.delay-node {
+  border-left: 4px solid #84cc16 !important;
+}
+
+.conditional-node {
+  border-left: 4px solid #a855f7 !important;
+}
+
+.aggregate-node {
+  border-left: 4px solid #ec4899 !important;
+}
+
+/* Handle styles */
+.react-flow__handle {
+  width: 8px;
+  height: 8px;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.react-flow__handle-connecting {
+  background: #3b82f6 !important;
+}
+
+.react-flow__handle-valid {
+  background: #10b981 !important;
+}
